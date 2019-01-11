@@ -1,6 +1,6 @@
 package ua.testov.test;
 
-import java.math.BigInteger;
+import java.math.BigInteger; 
 
 public class FactorialThread implements Runnable {
 	private int number=101;
