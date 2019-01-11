@@ -1,9 +1,9 @@
 package ua.testov.test;
 
-import java.math.BigInteger; 
+import java.math.BigInteger;
 
 public class FactorialThread implements Runnable {
-	private int number=101;
+	private int number = 101;
 
 	public FactorialThread() {
 		super();
@@ -16,7 +16,8 @@ public class FactorialThread implements Runnable {
 	}
 
 	private BigInteger calculateFactorial(int number) throws IllegalArgumentException {
-		if(number==101) throw new IllegalArgumentException("none"); 
+		if (number == 101)
+			throw new IllegalArgumentException("none");
 		BigInteger fact = new BigInteger("1");
 		for (int i = 2; i <= number; i++) {
 			fact = fact.multiply(new BigInteger("" + i));
@@ -26,10 +27,9 @@ public class FactorialThread implements Runnable {
 
 	public void run() {
 		Thread th = Thread.currentThread();
-		try{
-		System.out.println(th.getName() + " " + this.number + "!= "
-				+ calculateFactorial(this.number));
-		}catch(IllegalArgumentException e){
+		try {
+			System.out.println(th.getName() + " " + this.number + "!= " + calculateFactorial(this.number));
+		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		}
 
